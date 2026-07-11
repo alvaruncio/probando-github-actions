@@ -10,7 +10,17 @@ jobs:
         steps:
             -   name: Saludo
                 run: echo "Hola desde GitHub Actions!"
+                
             -   name: Ver fecha del runner
                 run: date
+
+            -   name: Ver archivos disponibles
+                run: ls -la
+    repo-files:
+        runs-on: ubuntu-24.04
+        steps:
+            -   name: Descargar codigo del repo
+                uses: actions/checkout@v6
+            
             -   name: Ver archivos disponibles
                 run: ls -la
